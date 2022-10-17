@@ -1,0 +1,32 @@
+
+### update contribution
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "username": "pikita",
+    "email": "kolchin.nv@gmail.com",
+    "password": "123"
+}
+
+### update contribution
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+
+{
+    "email": "dukita@mail.ru",
+    "username": "nikita"
+}
+
+### update contribution
+POST http://localhost:3000/api/users/signin
+Content-Type: application/json
+
+{
+    "email": "dukita@mail.ru",
+    "password":"123"
+}
+
+### update contribution
+GET  http://localhost:3000/api/users/
+
