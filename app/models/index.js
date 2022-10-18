@@ -21,4 +21,6 @@ db.sequelize = sequelize
 db.questionnaires = require("./questionnaire.model.js")(sequelize, Sequelize)
 db.questions = require("./question.model.js")(sequelize, Sequelize)
 db.users = require("./user.model.js")(sequelize, Sequelize)
+
+db.questionnaires.hasMany(db.questions);
 module.exports = db
