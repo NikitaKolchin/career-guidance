@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const passport = require("passport")
-const passportConfig = require("./app/config/passport.config")
+const passportConfig = require("./app/passport")
 const session = require("express-session")
 const exphbs = require("express-handlebars")
 
@@ -52,7 +52,7 @@ app.engine(
 )
 app.set("view engine", ".hbs")
 
-require("./app/routes/turorial.routes")(app)
+require("./app/routes/questionnaire.routes")(app)
 require("./app/routes/user.routes")(app)
 
 const PORT = process.env.PORT || 3000

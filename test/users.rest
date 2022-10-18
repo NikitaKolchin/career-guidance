@@ -1,5 +1,5 @@
 
-### update contribution
+### create user
 POST http://localhost:3000/api/users
 Content-Type: application/json
 
@@ -9,7 +9,7 @@ Content-Type: application/json
     "password": "123"
 }
 
-### update contribution
+### update user
 PUT http://localhost:3000/api/users/1
 Content-Type: application/json
 
@@ -27,6 +27,11 @@ Content-Type: application/json
     "password":"123"
 }
 
-### update contribution
+### delete user
+DELETE http://localhost:3000/api/users/1
+
+### get users
 GET  http://localhost:3000/api/users/
+
+
 

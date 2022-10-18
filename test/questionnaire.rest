@@ -1,0 +1,13 @@
+
+### create questionnaire
+POST http://localhost:3000/api/questionnaires
+Content-Type: application/json
+
+{
+    "title": "pellow привет",
+    "description": "Yellow",
+    "published":  true
+}
+
+### get questionnaire
+GET  http://localhost:3000/api/questionnaires
