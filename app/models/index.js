@@ -18,9 +18,15 @@ const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
-db.questionnaires = require("./questionnaire.model.js")(sequelize, Sequelize)
-db.questions = require("./question.model.js")(sequelize, Sequelize)
-db.users = require("./user.model.js")(sequelize, Sequelize)
+db.questionnaires = require("./questionnaire.model")(sequelize, Sequelize)
+db.questions = require("./question.model")(sequelize, Sequelize)
+db.users = require("./user.model")(sequelize, Sequelize)
+db.variants = require("./variant.model")(sequelize, Sequelize)
+db.answers = require("./answer.model")(sequelize, Sequelize)
 
-db.questionnaires.hasMany(db.questions);
+db.questionnaires.hasMany(db.questions)
+db.questions.hasMany(db.variants)
+db.users.belongsToMany(db.variants, {through: db.answers})
+db.variants.belongsToMany(db.users, {through: db.answers})
+// db.questions.hasMany(db.variants); //belongs to many??
 module.exports = db

@@ -6,6 +6,10 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.STRING,
     },
+    type: {
+      type: Sequelize.ENUM("simple", "choise", "graded"),
+      defaultValue: "simple",
+    },
     published: {
       type: Sequelize.BOOLEAN,
     },

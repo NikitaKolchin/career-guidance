@@ -22,12 +22,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const db = require("./app/models")
-db.sequelize.sync()
+// db.sequelize.sync()
 
 // drop the table if it already exists
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -55,7 +55,8 @@ app.set("view engine", ".hbs")
 require("./app/routes/questionnaire.routes")(app)
 require("./app/routes/question.routes")(app)
 require("./app/routes/user.routes")(app)
-
+// require("./app/routes/question.routes")(app)
+// require("./app/routes/user.routes")(app)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
