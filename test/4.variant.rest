@@ -1,0 +1,39 @@
+
+### create variant 1
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "а",
+    "graid": null,
+    "description": "Ухаживать за животными",
+    "questionId":3
+}
+
+### create variant 2
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "б",
+    "graid": null,
+    "description": "Обслуживать какие-нибудь приборы, следить за ними, регулировать их",
+    "questionId":3
+}
+
+
+
+### update question
+PUT http://localhost:3000/api/variants/1
+Content-Type: application/json
+
+{
+    "title": "а",
+    "graid": null,
+    "description": "Ухаживать за животными",
+    "questionId":3
+}
+
+
+### get questionnaire
+GET  http://localhost:3000/api/variants/

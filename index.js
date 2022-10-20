@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }))
 const db = require("./app/models")
 // db.sequelize.sync()
 
-// drop the table if it already exists
+ // drop the table if it already exists
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 });
@@ -55,8 +55,8 @@ app.set("view engine", ".hbs")
 require("./app/routes/questionnaire.routes")(app)
 require("./app/routes/question.routes")(app)
 require("./app/routes/user.routes")(app)
-// require("./app/routes/question.routes")(app)
-// require("./app/routes/user.routes")(app)
+require("./app/routes/variant.routes")(app)
+require("./app/routes/answer.routes")(app)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {

@@ -1,5 +1,6 @@
 const db = require("../models")
 const Question = db.questions
+// const Questionnaire = db.questionnaires
 const Op = db.Sequelize.Op
 
 // Create and Save a new Question
@@ -14,9 +15,7 @@ exports.create = (req, res) => {
 
   // Create a Question
   const question = {
-    questionnaireId:req.body.questionnaireId,
-    title: req.body.title,
-    description: req.body.description,
+    ...req.body,
     published: req.body.published ? req.body.published : true,
   }
 
@@ -57,6 +56,7 @@ exports.findOne = (req, res) => {
   Question.findByPk(id)
     .then((data) => {
       if (data) {
+        data.getQuestionnaire().then(console.dir)
         res.send(data)
       } else {
         res.status(404).send({

@@ -1,0 +1,24 @@
+
+### create questionnaire 1
+POST http://localhost:3000/api/questionnaires
+Content-Type: application/json
+
+{
+    "title": "Обращение к оптанту",
+    "description": "Номер 1",
+    "published":  true
+}
+
+### create questionnaire 2
+POST http://localhost:3000/api/questionnaires
+Content-Type: application/json
+
+{
+    "title": "Климова",
+    "description": "Номер 2",
+    "published":  true
+}
+
+
+### get questionnaires
+GET  http://localhost:3000/api/questionnaires/

@@ -1,0 +1,37 @@
+
+### create answer 1
+POST http://localhost:3000/api/answers
+Content-Type: application/json
+
+{
+    "graid": null,
+    "questionId":1,
+    "userId":1
+}
+
+### create answer 2
+POST http://localhost:3000/api/answers
+Content-Type: application/json
+
+{
+    "graid": null,
+    "variantId":1,
+    "userId":1,
+    "questionId":2
+}
+
+
+
+### update question
+PUT http://localhost:3000/api/answers/1
+Content-Type: application/json
+
+{
+    "graid": 5,
+    "variantId":2,
+    "userId":1
+}
+
+
+### get questionnaire
+GET  http://localhost:3000/api/answers/

@@ -1,11 +1,21 @@
 
-### create user
+### create user1
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "username": "nikita",
+    "email": "kolchin.nv@gmail.com",
+    "password": "123"
+}
+
+### create user2
 POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
     "username": "pikita",
-    "email": "kolchin.nv@gmail.com",
+    "email": "pikita@mail.ru",
     "password": "123"
 }
 

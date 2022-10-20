@@ -1,0 +1,49 @@
+
+### create question 1
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Имя",
+    "description": "Введите имя",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 2
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Возраст",
+    "description": "Введите возраст",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 3
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "1",
+    "description": "Первое",
+    "published":  true,
+    "questionnaireId":2
+}
+
+
+### update question
+PUT http://localhost:3000/api/questions/2
+Content-Type: application/json
+
+{
+    "title": "pellow привет1111",
+    "description": "Yellowddd",
+    "published":  true,
+    "questionnaireId":1
+}
+
+
+### get question
+GET  http://localhost:3000/api/questions/1
