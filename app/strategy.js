@@ -74,3 +74,8 @@ exports.deserializeUser = async function (id, done) {
 exports.serializeUser = function (user, done) {
   done(null, user.id)
 }
+
+exports.isLoggedIn =  function (req, res, next) {
+  if (req.isAuthenticated()) return next()
+  res.redirect("/api/users/signin")
+}

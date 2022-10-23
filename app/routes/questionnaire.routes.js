@@ -1,13 +1,14 @@
 module.exports = (app) => {
   const questionnaires = require("../controllers/questionnaire.controller.js")
+  const isLoggedIn = require('../strategy').isLoggedIn
+  const router = require("express").Router()
 
-  var router = require("express").Router()
 
   // Create a new Tutorial
   router.post("/", questionnaires.create)
 
   // Retrieve all Tutorials
-  router.get("/", questionnaires.findAll)
+  router.get("/", isLoggedIn, questionnaires.findAll)
 
   // Retrieve all published Tutorials
   router.get("/published", questionnaires.findAllPublished)

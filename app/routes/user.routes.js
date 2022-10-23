@@ -1,6 +1,6 @@
 module.exports = (app) => {
   const users = require("../controllers/user.controller.js")
-
+  const isLoggedIn = require("../strategy").isLoggedIn
   const passport = require("passport")
   var router = require("express").Router()
   router.get("/", users.findAll)
@@ -10,8 +10,8 @@ module.exports = (app) => {
   router.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/dashboard",
-      failureRedirect: "/signup",
+      successRedirect: "/api/users/dashboard",
+      failureRedirect: "/api/users/signup",
     })
   )
 
@@ -25,10 +25,7 @@ module.exports = (app) => {
     })
   )
 
-  function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) return next()
-    res.redirect("/signin")
-  }
+
 
   // router.post("/passworded", passport.authenticate('local-signin',{ session: false }), users.findAllPassworded);
   // // router.post("/auth", users.auth);

@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const passport = require("passport")
-const passportConfig = require("./app/passport")
+const passportConfig = require("./app/strategy")
 const session = require("express-session")
 const exphbs = require("express-handlebars")
 
@@ -22,12 +22,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const db = require("./app/models")
-// db.sequelize.sync()
+db.sequelize.sync()
 
  // drop the table if it already exists
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -35,6 +35,7 @@ app.use(passport.session())
 passportConfig.createStrategy(passport)
 passport.serializeUser(passportConfig.serializeUser)
 passport.deserializeUser(passportConfig.deserializeUser)
+
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to career guidance application." })
