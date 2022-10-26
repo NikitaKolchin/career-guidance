@@ -38,7 +38,8 @@ passport.deserializeUser(passportConfig.deserializeUser)
 
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to career guidance application." })
+  res.render("index")
+  // res.json({ message: "Welcome to career guidance application." })
 })
 
 //For Handlebars
