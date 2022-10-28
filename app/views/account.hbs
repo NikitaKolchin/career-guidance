@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Passport with Sequelize</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h2>Dashboard</h2>
+    <h2>Hurray! {{currentUser.dataValues.email}} you are logged in 🥳.</h2>
+    <h3>Наши пользватели</h3>
+        <ul>
+            {{#each users}}
+                <li>{{this.dataValues.email}}</li>
+            {{/each}}
+        </ul>
+    <a href="/api/users/logout">Выйти</a>
+</body>
+
+</html>

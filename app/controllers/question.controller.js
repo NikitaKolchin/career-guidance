@@ -57,6 +57,7 @@ exports.findOne = (req, res) => {
     .then((data) => {
       if (data) {
         data.getQuestionnaire().then(console.dir)
+        data.getVariants().then(console.log)
         res.send(data)
       } else {
         res.status(404).send({

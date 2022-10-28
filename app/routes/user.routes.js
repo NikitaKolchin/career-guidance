@@ -10,17 +10,17 @@ module.exports = (app) => {
   router.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/api/users/dashboard",
+      successRedirect: "/api/users/account",
       failureRedirect: "/api/users/signup",
     })
   )
 
-  router.get("/dashboard", isLoggedIn, users.findAllPassworded)
+  router.get("/account", isLoggedIn, users.account)
   router.get("/logout", users.logout)
   router.post(
     "/signin",
     passport.authenticate("local-signin", {
-      successRedirect: "/api/users/dashboard",
+      successRedirect: "/api/users/account",
       failureRedirect: "/api/users/signin",
     })
   )

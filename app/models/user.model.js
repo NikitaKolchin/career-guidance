@@ -31,6 +31,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.ENUM("active", "inactive"),
       defaultValue: "active",
     },
+    isAdmin: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    }
   })
 
   return User

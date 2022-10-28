@@ -1,0 +1,378 @@
+### create user1
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "username": "nikita",
+    "email": "kolchin.nv@gmail.com",
+    "password": "123"
+}
+
+### create user2
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "username": "pikita",
+    "email": "pikita@mail.ru",
+    "password": "123"
+}
+
+
+### create questionnaire 1
+POST http://localhost:3000/api/questionnaires
+Content-Type: application/json
+
+{
+    "title": "Aнкета",
+    "description": "Обращение к оптанту",
+    "published":  true
+}
+
+### create questionnaire 2
+POST http://localhost:3000/api/questionnaires
+Content-Type: application/json
+
+{
+    "title": "ДДО Климова",
+    "description": "Дифференциально-диагностический опросник Е.А. Климовой",
+    "published":  true
+}
+
+
+### create question 1
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Имя",
+    "description": "Введите имя",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 2
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Возраст",
+    "description": "Введите возраст",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 3
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Назови любимые учебные предметы (в школе, ВУЗе)",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 4
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Назови нелюбимые учебные предметы (в школе, ВУЗе)",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 5
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Назови профессии, которые тебе нравятся или вызывают интерес",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 6
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Назови профессии, которые тебе не нравятся или вызывают отторжение",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 7
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Чем ты любишь заниматься в свободное время или опиши свое хобби (спать – не считается 😊)?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 8
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "В какой факультативной работе принимаешь участие сейчас или принимал в школе/ВУЗе?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 9
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Какая область деятельности или знаний из приведенных ниже тебя больше всего интересует:",
+    "hasVariants": true,
+    "isMultiple":true,
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 10
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Кем ты сейчас работаешь?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 11
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Устраивает ли тебя твоя выбранная профессия? Получаешь ли ты от нее удовольствие?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 12
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Что повлияло на твой выбор профессии?",
+    "hasVariants": true,
+    "isMultiple":true,
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 13
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Есть ли у тебя родственники или друзья, которые работают по избранной тобой профессии?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 14
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Есть ли у тебя друзья (дети), которые намерены избрать ту же профессию, что и ты?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 15
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Что привлекает тебя в избранной (сейчас) профессии",
+    "hasVariants": true,
+    "isMultiple":true,
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create question 16
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+    "title": "Кем ты хотел быть в раннем детстве, когда вырастешь?",
+    "published":  true,
+    "questionnaireId":1
+}
+
+### create variant 1 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "естественнонаучная (химия, биология, медицина, геология, сельское хозяйство)",
+    "graid": null,
+    "code":1,
+    "questionId":9
+}
+
+### create variant 2 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "точные науки (математика, физика)",
+    "code":2,
+    "graid": null,
+    "questionId":9
+}
+
+### create variant 3 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "общественно-научная (история, философия, экономика, право)",
+    "code":3,
+    "graid": null,
+    "questionId":9
+}
+
+### create variant 4 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "гуманитарная (литература, журналистика, лингвистика, педагогика, психология)",
+    "graid": null,
+    "code":4,
+    "questionId":9
+}
+
+### create variant 5 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "искусство (музыкальное, театральное, изобразительное)",
+    "graid": null,
+    "code":5,
+    "questionId":9
+}
+
+### create variant 6 9
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "или же определенные интересы отсутствуют",
+    "graid": null,
+    "code":6,
+    "questionId":9
+}
+
+### create variant 1 12
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "родители,друзья",
+    "graid": null,
+    "questionId":12,
+    "code":1
+}
+
+### create variant 2 12
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "учителя, книги",
+    "graid": null,
+    "code":2,
+    "questionId":12
+}
+
+### create variant 3 12
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "СМИ, радио, телевидение",
+    "graid": null,
+    "code":3,
+    "questionId":12
+}
+
+### create variant 4 12
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "известные личности, кино",
+    "graid": null,
+    "code":4,
+    "questionId":12
+}
+
+### create variant 5 12
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "свой вариант",
+    "graid": null,
+    "code":5,
+    "questionId":12
+}
+
+
+
+
+
+### create variant 1 15
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "условия труда",
+    "graid": null,
+    "code":1,
+    "questionId":15
+}
+
+### create variant 2 15
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "сам процесс трудовой деятельности",
+    "graid": null,
+    "code":2,
+    "questionId":15
+}
+
+### create variant 3 15
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "высокая материальная обеспеченность",
+    "graid": null,
+    "code":3,
+    "questionId":15
+}
+
+### create variant 4 15
+POST http://localhost:3000/api/variants
+Content-Type: application/json
+
+{
+    "title": "подвижная работа и возможность получения новых впечатлений",
+    "graid": null,
+    "code":4,
+    "questionId":15
+}

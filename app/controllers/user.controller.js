@@ -1,3 +1,4 @@
+const { session } = require("passport")
 const db = require("../models")
 const User = db.users
 const Op = db.Sequelize.Op
@@ -137,18 +138,20 @@ exports.deleteAll = (req, res) => {
     })
 }
 
-// find all published User
-exports.findAllPassworded = (req, res) => {
-  User.findAll({ where: { password: { [Op.ne]: null } } })
-    .then((data) => {
-      res.send(data)
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while retrieving users.",
-      })
-    })
-}
+// // find all published User
+// const findAllPassworded =  async () => {
+
+//   User.findAll({ where: { password: { [Op.ne]: null } } })
+//     .then(data=> {
+//       console.log(data)
+//       return {message: data}
+//     })
+//     .catch((err) => {
+//      return {
+//        message: err.message || "Some error occurred while retrieving users.",
+//      }
+//     })
+// }
 
 exports.signup = function (req, res) {
   res.render("signup")
@@ -158,8 +161,12 @@ exports.signin = function (req, res) {
   res.render("signin")
 }
 
-exports.dashboard = function (req, res) {
-  res.render("dashboard")
+exports.account =async function  (req, res) {
+  const users = await User.findAll({ where: { password: { [Op.ne]: null } } })
+  // const currentUser = 
+  console.dir(req.user)
+  // console.log(users[0].dataValues.email)
+  res.render("account", {currentUser: req.user, users})
 }
 
 exports.logout = function (req, res) {

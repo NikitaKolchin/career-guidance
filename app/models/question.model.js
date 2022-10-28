@@ -3,17 +3,23 @@ module.exports = (sequelize, Sequelize) => {
     title: {
       type: Sequelize.STRING,
     },
-    code: {
-      type: Sequelize.STRING,
-    }, 
-    chapter: {
+    group: {
       type: Sequelize.STRING,
     },
     description: {
       type: Sequelize.STRING,
     },
+    hasVariants: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: true,
+    },
+    isMultiple: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
     published: {
       type: Sequelize.BOOLEAN,
+      defaultValue: true,
     },
   })
  
