@@ -1,6 +1,8 @@
+const { verify } = require("../strategy")
+
 module.exports = (app) => {
   const questionnaires = require("../controllers/questionnaire.controller.js")
-  const isLoggedIn = require('../strategy').isLoggedIn
+  const verifyAuthStatus = require('../strategy').verifyAuthStatus
   const router = require("express").Router()
 
 
@@ -8,7 +10,7 @@ module.exports = (app) => {
   router.post("/", questionnaires.create)
 
   // Retrieve all Tutorials
-  router.get("/", isLoggedIn, questionnaires.findAll)
+  router.get("/", verifyAuthStatus, questionnaires.findAll)
 
   // Retrieve all published Tutorials
   router.get("/published", questionnaires.findAllPublished)

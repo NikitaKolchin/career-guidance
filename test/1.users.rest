@@ -40,6 +40,14 @@ Content-Type: application/json
 ### delete user
 DELETE http://localhost:3000/api/users/
 
+### update user
+PUT http://localhost:3000/api/users/3
+Content-Type: application/json
+
+{
+    "status": "inactive"
+}
+
 ### get users
 GET  http://localhost:3000/api/users/
 

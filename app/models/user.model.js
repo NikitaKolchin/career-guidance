@@ -29,7 +29,7 @@ module.exports = (sequelize, Sequelize) => {
     },
     status: {
       type: Sequelize.ENUM("active", "inactive"),
-      defaultValue: "active",
+      defaultValue: "inactive",
     },
     isAdmin: {
       type: Sequelize.BOOLEAN,

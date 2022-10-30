@@ -1,8 +1,7 @@
-const { session } = require("passport")
 const db = require("../models")
 const User = db.users
 const Op = db.Sequelize.Op
-
+const {sendConfirmationEmail} = require("../mailer")
 // Create and Save a new User
 exports.create = (req, res) => {
   // Validate request
@@ -138,20 +137,6 @@ exports.deleteAll = (req, res) => {
     })
 }
 
-// // find all published User
-// const findAllPassworded =  async () => {
-
-//   User.findAll({ where: { password: { [Op.ne]: null } } })
-//     .then(data=> {
-//       console.log(data)
-//       return {message: data}
-//     })
-//     .catch((err) => {
-//      return {
-//        message: err.message || "Some error occurred while retrieving users.",
-//      }
-//     })
-// }
 
 exports.signup = function (req, res) {
   res.render("signup")
@@ -167,6 +152,22 @@ exports.account =async function  (req, res) {
   console.dir(req.user)
   // console.log(users[0].dataValues.email)
   res.render("account", {currentUser: req.user, users})
+}
+
+exports.verify = async (req, res) => {
+  if (!req.params.confirmationCode) {
+    const confirmationCode = Buffer.from(req.user?.email).toString('base64')
+    sendConfirmationEmail(req.user?.username, req.user?.email ,confirmationCode)
+    res.render("verify")
+  }
+  else {
+    const email = Buffer.from(req.params.confirmationCode, 'base64').toString('ascii')
+    const user = await User.findOne({where:{ email, "status":"inactive"} })
+    if(!user) return
+    user.status = "active"
+    await user.save()
+    res.redirect("/")
+  }
 }
 
 exports.logout = function (req, res) {

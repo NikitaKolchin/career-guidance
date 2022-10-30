@@ -4,6 +4,7 @@ const passport = require("passport")
 const passportConfig = require("./app/strategy")
 const session = require("express-session")
 const exphbs = require("express-handlebars")
+const config = require("./app/config")
 
 // const cors = require("cors");
 // var corsOptions = {
@@ -13,7 +14,7 @@ const exphbs = require("express-handlebars")
 
 app.use(
   session({
-    secret: "secret",
+    secret: config.get("secret"),
     resave: true,
     saveUninitialized: true,
   })

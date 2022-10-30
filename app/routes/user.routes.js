@@ -1,6 +1,9 @@
+const { isActive } = require("../strategy")
+
 module.exports = (app) => {
   const users = require("../controllers/user.controller.js")
-  const isLoggedIn = require("../strategy").isLoggedIn
+  // const isLoggedIn = require("../strategy").isLoggedIn
+  const verifyAuthStatus = require("../strategy").verifyAuthStatus
   const passport = require("passport")
   var router = require("express").Router()
   router.get("/", users.findAll)
@@ -10,12 +13,12 @@ module.exports = (app) => {
   router.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/api/users/account",
+      successRedirect: "/api/users/verify",
       failureRedirect: "/api/users/signup",
     })
   )
-
-  router.get("/account", isLoggedIn, users.account)
+  router.get("/verify", users.verify)
+  router.get("/account", verifyAuthStatus, users.account)
   router.get("/logout", users.logout)
   router.post(
     "/signin",
@@ -25,7 +28,7 @@ module.exports = (app) => {
     })
   )
 
-
+  router.get("/verify/:confirmationCode", users.verify)
 
   // router.post("/passworded", passport.authenticate('local-signin',{ session: false }), users.findAllPassworded);
   // // router.post("/auth", users.auth);

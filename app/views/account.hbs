@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 
+<script>
+    const f = async () =>{
+        const a = await fetch("/api/questions/")
+        const b = await a.json()
+        console.log(b)
+    }
+</script>
+
 <body>
     <h2>Dashboard</h2>
     <h2>Hurray! {{currentUser.dataValues.email}} you are logged in 🥳.</h2>
@@ -15,7 +23,9 @@
                 <li>{{this.dataValues.email}}</li>
             {{/each}}
         </ul>
+    <button onclick="f()">get</button>
+    <br>
     <a href="/api/users/logout">Выйти</a>
 </body>
-
+ 
 </html>

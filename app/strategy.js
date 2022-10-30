@@ -75,7 +75,18 @@ exports.serializeUser = function (user, done) {
   done(null, user.id)
 }
 
-exports.isLoggedIn =  function (req, res, next) {
-  if (req.isAuthenticated()) return next()
-  res.redirect("/api/users/signin")
+// exports.isLoggedIn =  function (req, res, next) {
+//   if (req.isAuthenticated()) return next()
+//   res.redirect("/api/users/signin")
+// }
+
+exports.verifyAuthStatus =  function (req, res, next) {
+  if (req.isAuthenticated()) {
+    if (req.user.get("status")==="active") 
+      return next()
+    else 
+      res.redirect("/api/users/verify")
+  }
+  else
+    res.redirect("/api/users/signin")
 }
