@@ -6,11 +6,11 @@ const session = require("express-session")
 const exphbs = require("express-handlebars")
 const config = require("./app/config")
 
-// const cors = require("cors");
-// var corsOptions = {
-//   origin: "http://localhost:8081"
-// };
-// app.use(cors(corsOptions));
+const cors = require("cors");
+var corsOptions = {
+  origin: "http://localhost:8080"
+};
+app.use(cors(corsOptions));
 
 app.use(
   session({
