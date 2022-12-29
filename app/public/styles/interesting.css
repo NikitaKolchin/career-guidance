@@ -1,0 +1,192 @@
+:root{
+    --color-dark-blue: #045569;
+    --color-blue: #77C6C4;
+    --color-light: #FBFAF5;
+    --color-white: #FFFFFF;
+    --color-line: #43606E;
+}
+.interesting{
+    background-color: var(--color-light);
+}
+.interesting-title{
+    padding: 80px 0;
+    text-align: center;
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 3.125rem;
+    color: var(--color-line);
+
+}
+.interesting-title--color{
+    color: var(--color-blue)
+}
+.cards{
+    justify-content: space-between;
+}
+.card{
+    max-width: 250px;
+    padding: 24px;
+    padding-top: 32px;
+    width: 100%;
+    min-height: 350px;
+    border-radius: 80px;
+    border: 1px solid var(--color-dark-blue);
+    background-color: var(--color-white);
+}
+.card-title{
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: 'Lighthaus';
+    font-weight: 400;
+    font-size: 1.875rem;
+    color: var(--color-dark-blue);
+}
+.card-list{
+    font-family: 'Giga Sans';
+    font-weight: 400;
+    color: var(--color-dark-blue);
+}
+.card-item{
+    color: var(--color-blue);
+    margin: 24px;
+}
+.card-item__text{
+    font-family: 'Giga Sans';
+    font-weight: 400;
+    color: var(--color-dark-blue);
+}
+.card-text{
+    margin: 24px 0;
+    color: var(--color-blue);
+    font-family: 'Giga Sans';
+    font-weight: 400;
+}
+.card-text--color{
+ color: var(--color-dark-blue);    
+}
+.bonus-icon{
+display: block;
+margin: auto;
+margin-top: 48px;
+margin-bottom: 48px;
+}
+.bonus-card-padding{
+    padding-bottom: 135px;
+}
+.bonus-card{
+    max-width: 620px;
+    width: 100%;
+    min-height: 250px;
+    border-radius: 80px;
+    margin: auto;
+    border: 1px solid var(--color-dark-blue);
+    background-color: #ADD7D6;
+}
+.bonus-card-title{
+    text-align: center;
+    margin: 24px;
+    margin-top: 36px;
+    font-family: 'Lighthaus';
+    font-weight: 400;
+    font-size: 1.875rem;
+    color: var(--color-dark-blue);
+}
+.bonus-card-text{
+    margin: 24px 120px;
+    text-align: center;
+    color: var(--color-dark-blue);
+    font-family: 'Giga Sans';
+    font-weight: 400;
+}
+.bonus-card-text--color{
+    color: var(--color-white);
+}
+/* article статьи */
+.article{
+background-color: #ADD7D6;
+}
+.article-title{
+    padding-top: 80px;
+    padding-bottom: 24px;
+    text-align: center;
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 3.125rem;
+    color: var(--color-line);
+}
+.article-text{
+    margin: auto;
+    padding-bottom: 48px;
+    text-align: center;
+    color: var(--color-dark-blue);
+    font-family: 'Giga Sans';
+    font-weight: 400;
+}
+.article-cards{
+    justify-content: space-between;
+    padding-bottom: 340px;
+}
+.article-card{
+    max-width: 500px;
+    padding-bottom: 36px;
+    width: 100%;
+    min-height: 490px;
+    border-radius: 80px;
+    border: 1px solid var(--color-dark-blue);
+    background-color: var(--color-white);
+}
+.article-card__img{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 24px;
+}
+.article-card-title{
+    max-width: 416px;
+    margin: auto;
+    padding-bottom: 12px;
+    text-align: center;
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 1.875rem;
+    color: var(--color-line);
+}
+.article-card-text{
+    max-width: 385px;
+    padding-bottom: 42px;
+    margin: auto;
+    text-align: left;
+    color: var(--color-dark-blue);
+    font-family: 'Giga Sans';
+    font-weight: 400;
+}
+.article-card-text--padding{
+    padding-bottom: 46px;
+}
+.article__btn{
+    display: block;
+    max-width: 85px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 80px; 
+    padding: 16px 50px;
+    margin: auto;
+}
+
+
+@media (max-width: 770px) {
+    .article-cards, .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .step {
+        display: none;
+    }
+    .interesting-title{
+        text-align: center;
+        font-family: 'Lighthaus';
+        font-weight: 500;
+        font-size: 1.75rem;
+    
+    }
+}

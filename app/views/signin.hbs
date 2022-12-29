@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sign in Layout</title>
-    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UProffi - Работай в удовольствие</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/util.css">
+    <link rel="stylesheet" href="../../styles/hamburgers.css">
+    <link rel="stylesheet" href="../../styles/headfooter.css">
+    <link rel="stylesheet" href="../../styles/signin.css">
 </head>
+
 <body>
-    <h2>Passport With Sequelize and MySQL</h2>
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
-    </form>
+    <header class="header _d-flex _flex-ac _flex-sb">
+        <div class="_container12 _d-flex _flex-sb _flex-ac">
+            <a href="/"> <img src="../../images/logo_top.svg" alt=""></a>
+            <button class="hamburger hamburger--squeeze header__toggle" type="button" id="hamburger_btn">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+            </button>
+            <div class="header__menu _d-flex _flex-sb _flex-ac">
+            <nav class="header__nav">
+                <ul class="_d-flex _flex-sa header__item--decor _text-gs _uppercase">
+                    <li><a class = "header__item _text-medium" href="method.html">Методики</a></li>
+                    <li><a class = "header__item _text-medium" href="interesting.html">Интересное</a></li>
+                    <li><a class = "header__item _text-medium" href="">Отзывы</a></li>
+                </ul>
+            </nav>
+            <div class="header__btns _d-flex _flex-sa">
+                <a class="header__btn header__btn--sec _text-gs _uppercase" href="signin.html">Вход</a>
+                <a class="header__btn header__btn--prim _text-gs _uppercase" href="signup.html">Регистрация</a>
+            </div>
+            </div>
+        </div>
+        </header>
+        <section class="main _d-flex _flex-ac _flex-col">
+            <h1 class="_text-big _text-lh _col-dark"> 
+                Вход в систему
+            </h1>
+            <form  class="form" id="signin" name="signin" method="post" action="signin">          
+                <label for="email" class="_text-gs _text-medium _col-white">Ваш e-mail</label>
+                <input class="form__input _text-gs _col-dark _text-medium" name="email" type="text"/>
+                <label for="password" class="_text-gs _text-medium _col-white">... и пароль</label>
+                <input class="form__input _text-medium _text-gs _col-dark" name="password" type="password" />
+                <input class="form__btn _text-gs _text-medium _uppercase _text-bold"  type="submit" value="Войти" />
+            </form>
+            
+        </section>
+        <footer class="footer _d-flex"> 
+        <div class= "_container12 footer__main _d-flex _flex-col _flex-sa">
+            <div class="_d-flex">
+            <div>
+                <img class="footer__logo" src="images/logo_top.svg" alt="">
+                <div class="_d-flex footer__soc _flex-sb">
+                <img src="images/vk.png" alt="">
+                <img src="images/telegram.png" alt="">
+                <img src="images/whatsup.png" alt="">
+                </div>
+            </div>
+            <p class="footer__h _col-light _text-great _text-lh">свобода быть собой</p>
+            </div>
+    
+            <div class="_d-flex">
+            <a class="_text-small _col-light _text-gs footer__confi" href="">Политика конфиденциальности</a>
+            <nav class="footer__menu">
+                <ul class="_d-flex _flex-sb footer__item--decor _text-gs _uppercase">
+                    <li><a class = "footer__item _text-medium" href="method.html">Методики</a></li>
+                    <li><a class = "footer__item _text-medium" href="interesting.html">Интересное</a></li>
+                    <li><a class = "footer__item _text-medium" href="">Отзывы</a></li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+        </footer>
+    <script src="js/index.js"></script>
 </body>
 </html>

@@ -14,13 +14,16 @@ exports.createStrategy = function (passport) {
           bCrypt.compareSync(password, userpass)
         const user = await User.findOne({ where: { email } })
         if (!user) {
+          console.log("no user", email, password)
           return done(null, false)
         }
         if (!isValidPassword(user.password, password)) {
+          console.log("Incorrect password", email, password)
           return done(null, false, {
             message: "Incorrect password.",
           })
         }
+        console.log("done", email, password)
         return done(null, user)
       }
     )

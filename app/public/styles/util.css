@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Giga Sans Medium';
+    src: url('../fonts/GigaSans-Medium.woff2') format('woff2'),
+        url('../fonts/GigaSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Giga Sans';
+    src:url('../fonts/GigaSans-Regular.woff2') format('woff2'),
+        url('../fonts/GigaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Giga Sans Semi';
+    src: url('../fonts/GigaSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/GigaSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lighthaus';
+    src: url('../fonts/Lighthaus.woff2') format('woff2'),
+        url('../fonts/Lighthaus.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+ 
+ /* служебные классы */
+
+ ._d-flex {
+    display: flex;
+}
+
+._d-grid {
+    display: grid;
+}
+
+._flex-sb {
+    justify-content: space-between;
+}
+
+._flex-sa {
+    justify-content: space-around;
+}
+
+._flex-ac {
+    align-items: center;
+}
+
+._flex-col {
+    flex-direction: column;
+}
+
+._container12 {
+    max-width: 1200px;
+    width: 95%;
+    margin: auto;
+}
+
+._container19 {
+    max-width: 1920px;
+    margin: auto;
+}
+._text-gs {
+    font-family: 'Giga Sans Medium';
+}
+._text-lh {
+    font-family: 'Lighthaus';
+}
+
+._text-great {
+    font-size: 55px;
+}
+
+
+._text-big {
+    font-size: xx-large;
+    line-height: 150%;
+}
+
+._text-x-large {
+    font-size:x-large;
+}
+
+._text-medium {
+    font-size: medium;
+}
+
+
+._text-small {
+    font-size: small;
+}
+
+._text-large {
+    font-size:large;
+}
+
+._text-bold {
+    font-weight: bold;
+}
+
+._text-stroke {
+    -webkit-text-stroke: 0.5px #045569;
+}
+
+._uppercase {
+    text-transform: uppercase;
+}
+
+._col-light {
+    color: #77C6C4;
+}
+._col-dark {
+    color: #045569;
+}
+._col-normal {
+    color: #43606E;
+}
+
+._col-white {
+    color: white;
+}
+
+._relative {
+    position: relative;
+    text-align: center;
+}

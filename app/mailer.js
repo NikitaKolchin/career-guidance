@@ -12,10 +12,10 @@ module.exports.sendConfirmationEmail = (name, email, confirmationCode) => {
     transport.sendMail({
         from: user,
         to: email,
-        subject: "Please confirm your account",
-        html: `<h2>Hello ${name}</h2>
-            <p>Thank you for subscribing. Please confirm your email by clicking on the following link</p>
-            <a href=http://localhost:3000/api/users/verify/${confirmationCode}> Click here</a>
+        subject: "Пожалуйста, подтвердите свой аккаунт",
+        html: `<h2>Привет, ${name}</h2>
+            <p>Спасибо за подписку, пожалуйста подтвердите свой e-mail, перейдя по следующей ссылке</p>
+            <a href=http://career-guidance.cf/api/users/verify/${confirmationCode}> Кликните сюда</a>
             </div>`,
     }).catch(err => console.log(err))
 }

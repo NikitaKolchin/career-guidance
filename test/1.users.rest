@@ -33,12 +33,12 @@ POST http://localhost:3000/api/users/signin
 Content-Type: application/json
 
 {
-    "email": "dukita@mail.ru",
+    "email": "kolchin.nv@gmail.com",
     "password":"123"
 }
 
 ### delete user
-DELETE http://localhost:3000/api/users/
+DELETE http://localhost:3000/api/users/14
 
 ### update user
 PUT http://localhost:3000/api/users/3

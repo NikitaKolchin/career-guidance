@@ -1,0 +1,162 @@
+/* header */
+
+
+.header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #FFFFFF;
+    border-top: #045569 solid;
+    border-top-width: 1px;
+    height: 100%;
+    border-bottom: #045569 solid;
+    border-bottom-width: 1px;
+}
+
+.header__toggle, .header__menu-mobile 
+{
+    display: none;
+}
+
+.header__menu {
+    width: 1000px;
+}
+
+.header__btns {
+    width: 30%;
+}
+
+.header__nav {
+    width: 60%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.header__item--decor {
+    list-style: none;
+}
+
+.header__item {
+    text-decoration: none;
+    color: #045569;
+}
+
+
+.header__btn {
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.header__btn--prim {
+    border: 1px solid #77C6C4;
+    background-color: #77C6C4;
+    color: white;
+}
+
+.header__btn--sec {
+    border: 1px solid #045569;
+    color: #045569;
+}
+
+a.header__btn--prim:hover{
+    background-color: #045569;
+    transition: 0.3s;
+}
+
+a.header__btn--sec:hover{
+    font-family: 'Giga Sans Semi';
+}
+
+
+/* footer */
+
+/* footer */
+/* ========================================= */
+.footer {
+    background-image: url("../images/footer.png");
+}
+
+.footer__main {
+    height: 240px;
+}
+.footer__soc {
+    width: 200px;
+}
+
+.footer__logo {
+    width: 200px;
+}
+
+.footer__menu {
+    width: 40%;
+}
+
+.footer__item {
+    text-decoration: none;
+    color: #045569;
+}
+
+.footer__item--decor {
+    list-style: none;
+}
+
+.footer__h {   
+    margin-left: 10%;
+}
+
+.footer__confi{
+    margin-right: 10%;
+}
+
+
+
+@media (max-width: 770px) {
+    .header__menu, .footer__menu, .footer__h {
+        display: none;
+    }
+    .header__toggle {
+        display:block;
+    }
+
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after,
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        background-color: #045569;
+    }
+
+    .header__toggle.is-active + .header__menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #FBFAF5;
+        border: #045569 solid 1px;
+        padding: 2%;
+        z-index: 1;
+    }
+
+    .header__toggle.is-active + .header__menu > .header__nav >ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__toggle.is-active + .header__menu > .header__btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.forms__registration {
+    display: none;
+}
+
+.forms__registration--open {
+    display: flex;
+}

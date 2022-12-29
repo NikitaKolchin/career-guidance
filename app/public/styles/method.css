@@ -1,0 +1,88 @@
+:root{
+    --color-dark-blue: #045569;
+    --color-blue: #77C6C4;
+    --color-light: #FBFAF5;
+    --color-white: #FFFFFF;
+    --color-line: #43606E;
+}
+.methods{
+    background-color: var(--color-light);
+}
+.methods-title{
+    padding: 80px 0;
+    text-align: center;
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 3.125rem;
+    color: var(--color-blue);
+}
+
+.content__top{
+    max-height: 70px;
+    align-items: center;
+}
+.content__top:first-child{
+    padding-top: 0;
+}
+.number{
+    margin-right: 20px;
+}
+.content__title{
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 1.875rem;
+    color: var(--color-dark-blue);
+}
+.content__text{
+    margin-left: 35px;
+    padding: 0 90px 65px 55px;
+    font-family: 'Giga Sans';
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-dark-blue);
+    border-left: 1px solid var(--color-line);
+}
+.content__text--last{
+    border: none;
+}
+.epilog{
+    display: block;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Lighthaus';
+    font-weight: 500;
+    font-size: 1.875rem;
+    color: var(--color-blue); 
+}
+.methods-btn-padding{
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.start-test__btn{
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 80px; 
+    padding: 20px 50px;
+    margin: auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 770px) {
+
+    .methods-title{
+        text-align: center;
+        font-family: 'Lighthaus';
+        font-weight: 500;
+        font-size: 1.95rem;
+    }
+
+    .content__title{
+        font-family: 'Lighthaus';
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+}

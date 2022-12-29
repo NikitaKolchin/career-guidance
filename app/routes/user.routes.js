@@ -20,7 +20,7 @@ module.exports = (app) => {
   router.get("/verify", users.verify)
   router.get("/account", verifyAuthStatus, users.account)
   router.get("/logout", users.logout)
-  router.post(
+  router.post( 
     "/signin",
     passport.authenticate("local-signin", {
       successRedirect: "/api/users/account",
@@ -28,10 +28,18 @@ module.exports = (app) => {
     })
   )
 
-  router.get("/verify/:confirmationCode", users.verify)
 
   // router.post("/passworded", passport.authenticate('local-signin',{ session: false }), users.findAllPassworded);
   // // router.post("/auth", users.auth);
+
+  // router.post(
+  //   "/signin",
+  //   passport.authenticate("local-signin", {session: true}),
+  //   (req, res) => {
+  //     res.send({done:"done"})}
+  // )
+
+  router.get("/verify/:confirmationCode", users.verify)
 
   router.post("/", users.create)
 

@@ -30,6 +30,9 @@ db.sequelize.sync()
 //   console.log("Drop and re-sync db.");
 // });
 
+app.use(express.static(__dirname+'\\app\\public')) //only for win, make multiplatform
+console.log(__dirname+'\\app\\public')
+
 app.use(passport.initialize())
 app.use(passport.session())
 
